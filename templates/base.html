@@ -9,39 +9,38 @@
     <title>{% block page_title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    
-    
+
+
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <ul class="nav navbar-nav">
-            {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-            <li><a href="{% url 'profile' %}">Profile</a></li>
-            {% else %}
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'registration' %}">Register</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    
-    <h1>{% block page_heading %}{% endblock %}</h1>
-    
-{% if messages %}
-    <div>
-        {% for message in messages %} {{ message }} {% endfor %}
+    <div class="bg-color">
+        <nav class="navbar navbar-inverse">
+            <ul class="nav navbar-nav">
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'registration' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
+        <div class="container">
+            <h1>{% block page_heading %}{% endblock %}</h1>
+
+            {% if messages %}
+            <div>
+                {% for message in messages %} {{ message }} {% endfor %}
+            </div>
+            {% endif %} {% block content %} {% endblock %}
+        </div>
     </div>
-{% endif %} 
 
-<div class="container">
-    {% block content %} 
-    {% endblock %}
-</div>
-
-<script src="https://kit.fontawesome.com/ccc410c56b.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/ccc410c56b.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 
 </html>
