@@ -22,5 +22,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home/', include(urls_home)),
     url(r'^accounts/', include(urls_accounts)),
-    
 ]
