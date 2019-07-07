@@ -1,10 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
+
 <div class="card-deck">
     {% for shirt in shirts %}
 
     <div class="card">
-        <div class="card-img-top" style="background-image: url('{{ MEDIA_URL }}{{ shirt.image }}')"></div>
+        <img class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ shirt.image }}')">
         <div class="card-body">
             <h5 class="card-title">{{ shirt.name }}</h5>
             <p class="card-text">{{ shirt.description }}</p>
@@ -25,6 +26,7 @@
     </div>
     {% endfor %}
 </div>
+
 
 
 {% endblock %}
