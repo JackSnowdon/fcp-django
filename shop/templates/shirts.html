@@ -3,27 +3,29 @@
 
 <div class="card-deck">
     {% for shirt in shirts %}
-
-    <div class="card">
-        <img class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ shirt.image }}')">
-        <div class="card-body">
-            <h5 class="card-title">{{ shirt.name }}</h5>
-            <p class="card-text">{{ shirt.description }}</p>
-            <p>{{ shirt.price }}</p>
-            <p>{{ shirt.shirt_size }}</p>
-        </div>
-        <div class="card-footer">
-            <form method="post" action="{% url 'add_to_cart' shirt.id %}">
-                {% csrf_token %}
-                <div class="input-group">
-                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                    <span class="input-group-btn">
+    <div class="col-lg-4">
+        <div class="card text-center">
+            <img class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ shirt.image }}')">
+            <div class="card-body">
+                <h5 class="card-title">{{ shirt.name }}</h5>
+                <p class="card-text">{{ shirt.description }}</p>
+                <p>{{ shirt.price }}</p>
+                <p>{{ shirt.shirt_size }}</p>
+            </div>
+            <div class="card-footer">
+                <form method="post" action="{% url 'add_to_cart' shirt.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                        <span class="input-group-btn">
                             <button class="btn btn-success" type="submit">Add</button>
                     </span>
-                </div>
-            </form>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+
     {% endfor %}
 </div>
 
