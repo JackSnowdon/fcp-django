@@ -32,7 +32,7 @@
             </div>
             <div class="mx-auto order-0">
                 <a class="navbar-brand mx-auto" href="{% url 'index' %}">Home</a>
-            
+
             </div>
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
@@ -51,6 +51,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Training</a>
                     </li>
+                    {% if product_count > 0 %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'view_cart' %}">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <label class="badge badge-warning">{{ product_count }}</label>
+                        </a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -58,7 +66,6 @@
             <br>
             <br>
             <h1>{% block page_heading %}{% endblock %}</h1>
-
             {% if messages %}
             <div>
                 {% for message in messages %} {{ message }} {% endfor %}
