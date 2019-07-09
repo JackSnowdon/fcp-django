@@ -6,3 +6,4 @@ static/
 media/
 .c9
 *__pycache__
+*.pyc
