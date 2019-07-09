@@ -1,13 +1,15 @@
 from django.db import models
 
 # Create your models here.
-class Tshirt(models.Model):
-    SHIRT_SIZES = (
+
+SHIRT_SIZES = (
         ('S', 'Small'),
         ('M', 'Medium'),
         ('L', 'Large'),
         ('XL', 'Extra Large')
-    )
+)
+    
+class Tshirt(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
@@ -16,4 +18,5 @@ class Tshirt(models.Model):
     
     def __str__(self):
         return self.name 
+        
         
