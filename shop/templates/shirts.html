@@ -7,12 +7,12 @@
 </div>
 <div class="card-deck">
     {% for shirt in shirts %}
-    <div class="col-lg-4">
+    <div class="col-card col-lg-4">
         <div class="card text-center">
             <img class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ shirt.image }}')">
             <div class="card-body">
                 <h5 class="card-title">{{ shirt.name }}</h5>
-                <p class="card-text">{{ shirt.description }}</p>
+                <!-- <p class="card-text">{{ shirt.description }}</p> -->
                 <p>{{ shirt.price }}</p>
                 <p>{{ shirt.shirt_size }}</p>
             </div>
