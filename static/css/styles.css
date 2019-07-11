@@ -1,0 +1,111 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Barlow|Roboto:400,700&display=swap');
+
+
+/* NavBar */
+
+.fixed-top{
+    padding: 3px 12px;
+}
+
+.nav-button {
+    color: #fafafa;
+}
+
+.nav-bg {
+    background-color: #191d20;
+}
+
+.navbar li a {
+    display: block;
+    color: #d9b637;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+
+}
+
+.navbar li a:hover {
+    color: #fafafa;
+}
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+
+
+/* Home Page */
+
+.jumbotron {
+    /* background-color: #23282F; */
+}
+
+/* Background Colors */
+
+.bg-color {
+    background-color: #fafafa;
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+}
+
+/* Shop */
+
+
+.card-img-top {
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 25vh;
+}
+
+.col-card {
+    margin-bottom: 25px;
+}
+
+
+.card {
+      height: 100%;
+}
+
+
+/* Class Helpers */
+
+a {
+    color: #d9b637;
+}
+
+body {
+    padding-top: 60px;
+}
+
+form {
+    width: 75%;
+}
+
+
+/* Media Queires */
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        float: none;
+    }
+    .navbar-brand.abs {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+}
