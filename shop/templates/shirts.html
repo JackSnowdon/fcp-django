@@ -14,7 +14,6 @@
                 <h5 class="card-title">{{ shirt.name }}</h5>
                 <!-- <p class="card-text">{{ shirt.description }}</p> -->
                 <p>{{ shirt.price }}</p>
-                <p>{{ shirt.shirt_size }}</p>
             </div>
             <div class="card-footer">
                 <form method="post" action="{% url 'add_to_cart' shirt.id %}">

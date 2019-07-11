@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% load bootstrap_tags %} {% block content %}
-<div class="row row-flex">
+
     <div class="card-deck">
         {% for item in cart_items %}
         <div class="col-card col-lg-4">
@@ -8,9 +8,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ item.shirt.name }}</h5>
                     <p class="card-text">{{ item.shirt.description }}</p>
-                    <p>{{ shirt.price }}</p>
-                    <p>{{ shirt.shirt_size }}</p>
-                </div>
+                    <p>{{ shirt.price }}</p>                </div>
                 <div class="card-footer">
                     <form method="post" action="{% url 'adjust_cart' item.id %}">
                         {% csrf_token %}
@@ -27,7 +25,6 @@
         </div>
         {% endfor %}
     </div>
-</div>
 <div class="row">
     <p>Total</p>
     <p><i class="fas fa-pound-sign"></i>{{ total }}</p>
