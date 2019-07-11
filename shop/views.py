@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from .models import Tshirt
-from .forms import OrderForm
+from .forms import ProductOrderForm
 
 # Create your views here.
 def all_shirts(request):
     if request.method == "POST":
-        form = OrderForm(request.POST)
+        form = ProductOrderForm(request.POST)
         if form.is_valid():
             form.save()
             shirts = Tshirt.objects.all()
