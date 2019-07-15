@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -22,14 +21,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-HOSTNAME="b74583736384460988484c457f8fc8dc.vfs.cloud9.us-east-1.amazonaws.com"
-ALLOWED_HOSTS = [HOSTNAME, 'fight-club-pro.herokuapp.com']
-
+if "HOSTNAME" is os.environ:
+    SECRET_KEY = os.environ.get("SECRET_KEY")
+    ALLOWED_HOSTS = [os.getenv('HOSTNAME')]
+    DEBUG = False
+else:
+    import env
+    SECRET_KEY = os.environ.get("SECRET_KEY")
+    ALLOWED_HOSTS = [env.HOSTNAME]
+    DEBUG = True
 
 # Application definition
 
