@@ -1,2 +1,2 @@
-web: gunicorn fcp-django.wsgi:application
+web: gunicorn fightclub.wsgi:application
 
