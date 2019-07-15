@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/JackSnowdon/fcp-django.svg?branch=master)](https://travis-ci.org/JackSnowdon/fcp-django)
