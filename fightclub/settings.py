@@ -25,7 +25,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-if "HOSTNAME" == "fight-club-pro.herokuapp.com":
+if "DISABLE_COLLECTSTATIC" == "1":
+    production = False
+else:
+    production = True
+    
+
+if production == False:
     ALLOWED_HOSTS = [os.getenv('HOSTNAME')]
     SECRET_KEY = os.environ.get('SECRET_KEY')
     DEBUG = False
