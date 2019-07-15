@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-if "DISABLE_COLLECTSTATIC" == "1":
+if "DISABLE_COLLECTSTATIC" == 1:
     production = False
 else:
     production = True
