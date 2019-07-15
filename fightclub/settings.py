@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-if "HOSTNAME" == "https://fight-club-pro.herokuapp.com/":
+if "HOSTNAME" == "fight-club-pro.herokuapp.com":
     ALLOWED_HOSTS = [os.getenv('HOSTNAME')]
     SECRET_KEY = os.environ.get('SECRET_KEY')
     DEBUG = False
