@@ -29,7 +29,6 @@ if os.getenv('HOSTNAME') == 'fight-club-pro.herokuapp.com':
     ALLOWED_HOSTS = [os.getenv('HOSTNAME')]
     SECRET_KEY = os.environ.get('SECRET_KEY')
     DEBUG = False
-    print("if")
 else:
     import env
     ALLOWED_HOSTS = [env.HOSTNAME]
