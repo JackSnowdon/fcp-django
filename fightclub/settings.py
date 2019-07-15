@@ -24,14 +24,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-if "HOSTNAME":
-    SECRET_KEY = os.environ.get("SECRET_KEY")
+
+if "HOSTNAME" == "https://fight-club-pro.herokuapp.com/":
     ALLOWED_HOSTS = [os.getenv('HOSTNAME')]
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     DEBUG = False
+    print("if")
 else:
     import env
-    SECRET_KEY = os.environ.get("SECRET_KEY")
     ALLOWED_HOSTS = [env.HOSTNAME]
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     DEBUG = True
 
 # Application definition
@@ -91,18 +93,7 @@ WSGI_APPLICATION = 'fightclub.wsgi.application'
 
 
 
-DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
-
-#if "DATABASE_URL" is os.environ:
-#
-#else:
-#    ("Progres URL not found, using SQLite instead")
-#    DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
     
 
 
