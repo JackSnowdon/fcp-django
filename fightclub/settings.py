@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 HOSTNAME="b74583736384460988484c457f8fc8dc.vfs.cloud9.us-east-1.amazonaws.com"
-ALLOWED_HOSTS = [HOSTNAME, "https://fight-club-pro.herokuapp.com/"]
+ALLOWED_HOSTS = [HOSTNAME, 'fight-club-pro.herokuapp.com']
 
 
 # Application definition
