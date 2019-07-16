@@ -50,10 +50,21 @@
     /* background-color: #23282F; */
 }
 
+.carousel {
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 33vh;
+    width: 100%;
+}
+
 /* Background Colors */
 
 .bg-color {
-    background-color: #fafafa;
+    background-color: #0c0b0b;
     font-family: 'Barlow', sans-serif;
     min-height: 100vh;
 }

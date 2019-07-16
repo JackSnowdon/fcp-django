@@ -14,6 +14,16 @@
         <form method="post" action="{% url 'add_to_cart' object.id %}">
             {% csrf_token %}
             <div class="input-group">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="size">Size</label>
+                    </div>
+                    <select class="custom-select" name="size" id="size">
+                        {% for size in shirt_size %}
+                        <option selected value="S">{{ size }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <span class="input-group-btn">
                     <button class="btn btn-success" type="submit">Add</button>
                 </span>

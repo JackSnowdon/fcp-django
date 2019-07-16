@@ -16,7 +16,6 @@ def all_shirts(request):
     shirts = Tshirt.objects.all()
     return render(request, "shirts.html", {"shirts": shirts})
     
-
-    
 class ItemDetailView(DetailView):
     model = Tshirt
+    shirt_size=SHIRT_SIZES
