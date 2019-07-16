@@ -8,15 +8,14 @@
 <div class="card-deck">
     {% for shirt in shirts %}
     <div class="col-card col-lg-4">
-        <div class="card text-center">
+        <div class="card card-list text-center">
             <img class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ shirt.image }}')">
             <div class="card-body">
                 <h5 class="card-title">{{ shirt.name }}</h5>
-                <!-- <p class="card-text">{{ shirt.description }}</p> -->
                 <p>£{{ shirt.price }}</p>
             </div>
             <div class="card-footer">
-                <a href="{% url 'item_detail' shirt.id %}" class="btn btn-primary stretched-link">Go somewhere</a>
+                <a href="{% url 'item_detail' shirt.id %}" class="btn btn-light stretched-link">Details</a>
             </div>
         </div>
     </div>

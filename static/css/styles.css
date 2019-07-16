@@ -60,7 +60,6 @@
 
 /* Shop */
 
-
 .card-img-top {
     -webkit-background-size: contain;
     -moz-background-size: contain;
@@ -76,8 +75,24 @@
 }
 
 
-.card {
-      height: 100%;
+.card-list {
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    background-color: #e2e6ea
+}
+
+.btn-light {
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
 }
 
 
