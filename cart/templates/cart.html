@@ -7,7 +7,6 @@
                 <img class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ item.shirt.image }}')">
                 <div class="card-body">
                     <h5 class="card-title">{{ item.shirt.name }}</h5>
-                    <!--- <p class="card-text">{{ item.shirt.description }}</p> -->
                     <p>{{ shirt.price }}</p>                </div>
                 <div class="card-footer">
                     <form method="post" action="{% url 'adjust_cart' item.id %}">

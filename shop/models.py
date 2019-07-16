@@ -1,13 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
-SHIRT_SIZES = (
-        ('S', 'Small'),
-        ('M', 'Medium'),
-        ('L', 'Large'),
-        ('XL', 'Extra Large')
-)
     
 class Tshirt(models.Model):
     name = models.CharField(max_length=254, default='')
