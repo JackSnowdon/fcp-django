@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="card-deck">
+
+    <div class="col-card col-lg-4">
+        <div class="card text-center">
+            <img class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ object.image }}')">
+            <div class="card-body">
+                <h5 class="card-title">{{ object.name }}</h5>
+                <p class="card-text">{{ object.description }}</p>
+                <p>{{ object.price }}</p>
+            </div>
+            <div class="card-footer">
+                <form method="post" action="{% url 'add_to_cart' object.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Add</button>
+                    </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

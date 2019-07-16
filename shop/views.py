@@ -1,15 +1,13 @@
 from django.shortcuts import render
+from django.views.generic import DetailView
 from .models import Tshirt
 from .forms import ProductOrderForm
 
 # Create your views here.
 def all_shirts(request):
-    if request.method == "POST":
-        form = ProductOrderForm(request.POST)
-        if form.is_valid():
-            form.save()
-            shirts = Tshirt.objects.all()
-            
-    else:
-        shirts = Tshirt.objects.all()
-        return render(request, "shirts.html", {"shirts": shirts})
+    shirts = Tshirt.objects.all()
+    return render(request, "shirts.html", {"shirts": shirts})
+    
+    
+class ItemDetailView(DetailView):
+    model = Tshirt

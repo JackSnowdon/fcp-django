@@ -21,9 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
 # SECURITY WARNING: don't run with debug turned on in production!
     
+"""
+Below if/else statement checks if HOSTNAME var is set to herokuapp
+if so, it sets up the production side vars & settings
+if not, it imports env.py for the vars & settings
+"""
 
 if os.getenv('HOSTNAME') == 'fight-club-pro.herokuapp.com':
     ALLOWED_HOSTS = [os.getenv('HOSTNAME')]
