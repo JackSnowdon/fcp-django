@@ -57,7 +57,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 33vh;
+    height: 40vh;
     width: 100%;
 }
 
@@ -67,9 +67,14 @@
     background-color: #0c0b0b;
     font-family: 'Barlow', sans-serif;
     min-height: 100vh;
+    color: #eaebeb;
 }
 
 /* Shop */
+
+.card {
+    color: #212529;
+}
 
 .card-img-top {
     -webkit-background-size: contain;
@@ -114,7 +119,7 @@ a {
 }
 
 body {
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 form {
