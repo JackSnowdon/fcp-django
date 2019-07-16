@@ -83,7 +83,7 @@
     -o-transition: all 0.2s ease-in-out;
 }
 
-.card:hover {
+.card-list:hover {
     background-color: #e2e6ea
 }
 

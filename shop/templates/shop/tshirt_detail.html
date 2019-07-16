@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<a href="{% url 'shirts' %}" class="btn btn-primary">Back</a>
+<a href="{% url 'shirts' %}" class="btn btn-light">Back</a>
 
 
 <div class="card text-center">
@@ -14,16 +14,25 @@
         <form method="post" action="{% url 'add_to_cart' object.id %}">
             {% csrf_token %}
             <div class="input-group">
-                <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Size</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="2XL">2XL</option>
+                    </select>
+                </div>
                 <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                    </span>
+                    <button class="btn btn-success" type="submit">Add</button>
+                </span>
             </div>
         </form>
     </div>
 </div>
-
-
 
 
 {% endblock %}
