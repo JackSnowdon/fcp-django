@@ -43,6 +43,15 @@
 }
 
 
+/* Background Colors */
+
+.bg-color {
+    background-color: #0c0b0b;
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+    color: #eaebeb;
+}
+
 
 /* Home Page */
 
@@ -61,13 +70,16 @@
     width: 100%;
 }
 
-/* Background Colors */
-
-.bg-color {
-    background-color: #0c0b0b;
-    font-family: 'Barlow', sans-serif;
-    min-height: 100vh;
+.banner-links {
     color: #eaebeb;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.banner-links:hover {
+    color: #d9b637;
 }
 
 /* Shop */

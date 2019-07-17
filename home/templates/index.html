@@ -14,12 +14,24 @@
         {% for item in banner %}
             {% if item.title == "Returning For A Second Time" %}
             <div class="carousel-item active">
+                <a class="banner-links" href="https://www.tickettailor.com/events/fightclubpro/">
                 <img class="carousel" style="background-image: url('{{ MEDIA_URL }}{{ item.image }}')">
                 <div class="text-center">
                     <h3>{{ item.title }}</h3>
                     <p>{{ item.description}}</p>
                 </div>
             </div>
+            </a>
+            {% elif item.title == "Latest Release" %}
+            <div class="carousel-item">
+                <a class="banner-links" href="{% url 'shirts' %}">
+                <img class="carousel" style="background-image: url('{{ MEDIA_URL }}{{ item.image }}')">
+                <div class="text-center">
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.description}}</p>
+                </div>
+            </div>
+            </a>
             {% else %}
             <div class="carousel-item">
                 <img class="carousel" style="background-image: url('{{ MEDIA_URL }}{{ item.image }}')">
