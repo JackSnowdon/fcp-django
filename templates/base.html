@@ -31,7 +31,9 @@
             </div>
             <div class="mx-auto order-0">
                 <a class="navbar-brand mx-auto" href="{% url 'index' %}">Home</a>
-
+                    {% if product_count > 0 %}
+                <span class="d-md-none"><a class="navbar-brand mx-auto nav-item" href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart"></i><label class="badge badge-warning">{{ product_count }}</label></a></span>
+                    {% endif %}
             </div>
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
