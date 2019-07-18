@@ -1,34 +1,26 @@
 {% extends 'base.html' %} {% block content %}
 
-<a href="{% url 'shirts' %}" class="btn btn-light">Back</a>
 
 
-<div class="card text-center">
-    <img class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ object.image }}')">
-    <div class="card-body">
-        <h5 class="card-title">{{ object.name }}</h5>
+
+<div class="row">
+    <div class="col-md-6 text-center">
+        <a href="{% url 'shirts' %}" class="btn btn-dark">Back To Shop</a>
+        <h5 class="detail-title">{{ object.name }}</h5>
+        <hr class="break1">
         <p class="card-text">{{ object.description }}</p>
         <p>£{{ object.price }}</p>
-    </div>
-    <div class="card-footer">
-        <form method="post" action="{% url 'add_to_cart' object.id %}">
+        <form class="detail-button" method="post" action="{% url 'add_to_cart' object.id %}">
             {% csrf_token %}
             <div class="input-group">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="size">Size</label>
-                    </div>
-                    <select class="custom-select" name="size" id="size">
-                        {% for size in shirt_size %}
-                        <option selected value="S">{{ size }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
                 <span class="input-group-btn">
-                    <button class="btn btn-success" type="submit">Add</button>
+                    <button class="btn btn-success" type="submit">Add To Cart</button>
                 </span>
             </div>
         </form>
+    </div>
+    <div class="col-md-6">
+        <img class="detail-img card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ object.image }}')">
     </div>
 </div>
 

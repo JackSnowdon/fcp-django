@@ -3,13 +3,6 @@ from django.views.generic import DetailView
 from .models import Tshirt
 from .forms import ProductOrderForm
 
-SHIRT_SIZES = (
-        ('S', 'Small'),
-        ('M', 'Medium'),
-        ('L', 'Large'),
-        ('XL', 'Extra Large'),
-        ('2XL', '2 Extra Large')
-)
 
 # Create your views here.
 def all_shirts(request):
@@ -18,4 +11,3 @@ def all_shirts(request):
     
 class ItemDetailView(DetailView):
     model = Tshirt
-    shirt_size=SHIRT_SIZES

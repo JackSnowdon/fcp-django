@@ -123,6 +123,30 @@
     -o-transition: all 0.2s ease-in-out;
 }
 
+/* Shop Item Detail */
+
+.detail-img {
+    height: 70vh
+}
+
+.detail-title {
+    margin: 2.5vh 0;
+}
+
+.detail-button {
+    display: block;
+    margin: auto;
+    width: 20%;
+}
+
+/* Breaks And Spacing */
+
+.break1 {
+    width: 130px;
+    height: 2px;
+    border: 0;
+    background-color: #ffffff;
+}
 
 /* Class Helpers */
 
