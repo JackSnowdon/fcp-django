@@ -134,15 +134,22 @@
 }
 
 .detail-button {
-    display: block;
+    display: inline-block;
     margin: auto;
-    width: 20%;
+    width: 10%;
 }
 
 /* Breaks And Spacing */
 
 .break1 {
     width: 130px;
+    height: 2px;
+    border: 0;
+    background-color: #ffffff;
+}
+
+.break2 {
+    width: 90px;
     height: 2px;
     border: 0;
     background-color: #ffffff;

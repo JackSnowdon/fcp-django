@@ -25,8 +25,10 @@
         {% endfor %}
     </div>
 <div class="row">
-    <p>Total</p>
+    <p>Total:</p>
     <p><i class="fas fa-pound-sign"></i>{{ total }}</p>
+</div>
+<div class="row">
     <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><i class="fas fa-cash-register"></i>Checkout</a>
 </div>
 {% endblock %}

@@ -69,8 +69,8 @@
             <br>
             <h1 class="text-center">{% block page_heading %}{% endblock %}</h1>
             {% if messages %}
-            <div>
-                {% for message in messages %} {{ message }} {% endfor %}
+            <div class="text-center">
+                {% for message in messages %} <h4>{{ message }}</h4>{% endfor %}
             </div>
             {% endif %} {% block content %} {% endblock %}
         </div>
