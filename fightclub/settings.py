@@ -83,7 +83,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'cart.contexts.cart_contents',
-                #'home.contexts.logo_banner',
             ],
         },
     },

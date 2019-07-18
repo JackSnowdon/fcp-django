@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block page_title %}Fight Club: Pro{% endblock %}
 
-{% block page_heading %}Fight Club: Pro{% endblock %}
 {% block content %}
+{% for l in logo %}
+<div class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ l.image }}')">
+</div>
+{% endfor %}
+<br>
 
-{{ logo }}
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">

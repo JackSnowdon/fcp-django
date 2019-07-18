@@ -4,4 +4,5 @@ from .models import *
 def index(request):
     """return the index html.file"""
     banner = BannerPost.objects.all()
-    return render(request, 'index.html', {"banner":banner})
+    logo = Logo.objects.all()
+    return render(request, 'index.html', {"banner":banner, "logo":logo})
