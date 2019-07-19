@@ -25,10 +25,12 @@
     </div>
     {% endfor %}
 </div>
-<div class="row">
-    <h3> Total: <i class="fas fa-pound-sign"></i>{{ total }}</h3>
-</div>
-<div class="row">
-    <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><i class="fas fa-cash-register"></i>Checkout</a>
+<div class="container">
+    <div class="row">
+        <h3> Total: <i class="fas fa-pound-sign"></i>{{ total }}</h3>
+    </div>
+    <div class="row">
+        <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><i class="fas fa-cash-register"></i>Checkout</a>
+    </div>
 </div>
 {% endblock %}

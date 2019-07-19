@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
+<a href="{% url 'shirts' %}" class="btn btn-dark back-button">Back To Shop</a>
 <div class="row">
     <div class="col-md-6">
         <img class="detail-img card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ object.image }}')">
     </div>
     <div class="col-md-6 text-center">
-        <a href="{% url 'shirts' %}" class="btn btn-dark">Back To Shop</a>
         <h5 class="detail-title">{{ object.name }}</h5>
         <hr class="break1">
         <p class="card-text">{{ object.description }}</p>

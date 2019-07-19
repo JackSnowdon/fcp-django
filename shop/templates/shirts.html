@@ -12,6 +12,7 @@
             <img class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ shirt.image }}')">
             <div class="card-body">
                 <h5 class="card-title">{{ shirt.name }}</h5>
+                <p class="card-text text-truncate">{{ shirt.description }}</p>
                 <p>£{{ shirt.price }}</p>
             </div>
             <div class="card-footer">
