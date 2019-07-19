@@ -1,5 +1,5 @@
 $(function() {
-    $("#payment-form").sumbit(function() {
+    $("#payment-form").submit(function() {
         var form = this;
         var card = {
             number: $("#id_credit_card_nuber").val(),

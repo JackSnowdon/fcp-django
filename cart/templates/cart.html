@@ -1,32 +1,32 @@
 {% extends 'base.html' %} {% load bootstrap_tags %} {% block content %}
-
-    <div class="card-deck">
-        {% for item in cart_items %}
-        <div class="col-card col-lg-4">
-            <div class="card text-center">
-                <img class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ item.shirt.image }}')">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item.shirt.name }}</h5>
-                    <p>{{ shirt.price }}</p>                </div>
-                <div class="card-footer">
-                    <form method="post" action="{% url 'adjust_cart' item.id %}">
-                        {% csrf_token %}
-                        <div class="input-group">
-                            <div class="input-group-addon">Qty</div>
-                            <input name="quantity" type="number" min="0" max="999" class="form-control" value="{{item.quantity}}">
-                            <span class="input-group-btn">
+<a href="{% url 'shirts' %}" class="btn btn-dark">Back To Shop</a>
+<div class="card-deck">
+    {% for item in cart_items %}
+    <div class="col-card col-lg-4">
+        <div class="card text-center">
+            <img class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ item.shirt.image }}')">
+            <div class="card-body">
+                <h5 class="card-title text-truncate">{{ item.shirt.name }}</h5>
+                <p>{{ shirt.price }}</p>
+            </div>
+            <div class="card-footer">
+                <form method="post" action="{% url 'adjust_cart' item.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <div class="input-group-addon">Qty: </div>
+                        <input name="quantity" type="number" min="0" max="999" class="form-control" value="{{item.quantity}}">
+                        <span class="input-group-btn">
                             <button class="btn btn-success" type="submit">Adjust</button>
                             </span>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
+</div>
 <div class="row">
-    <p>Total:</p>
-    <p><i class="fas fa-pound-sign"></i>{{ total }}</p>
+    <h3> Total: <i class="fas fa-pound-sign"></i>{{ total }}</h3>
 </div>
 <div class="row">
     <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><i class="fas fa-cash-register"></i>Checkout</a>

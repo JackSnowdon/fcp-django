@@ -9,7 +9,7 @@
 
 {% block content %}
 
-    <form method="POST">
+    <form class="form-helper" method="POST">
         {% csrf_token %} {{ login_form | as_bootstrap }}
         <button type="submit" class="btn btn-success">Login</button>
     </form>

@@ -138,6 +138,10 @@
     margin: auto;
 }
 
+.btn-dark {
+    margin-bottom: 1em;
+}
+
 /* Breaks And Spacing */
 
 .break1 {
@@ -159,6 +163,10 @@
 }
 
 /* Class Helpers */
+
+.form-helper {
+    width: 75%;
+}
 
 a {
     color: #d9b637;
