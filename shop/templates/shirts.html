@@ -18,7 +18,16 @@
                 <a href="{% url 'item_detail' shirt.id %}" class="btn btn-light stretched-link">Details</a>
             </div>
         </div>
+        <form class="" method="post" action="{% url 'add_to_cart' shirt.id %}">
+            {% csrf_token %}
+            <div class="input-group padding-top">
+                <span class="input-group-btn detail-button">
+                    <button class="btn btn-success" type="submit">Add</button>
+                </span>
+            </div>
+        </form>
     </div>
+
 
     {% endfor %}
 </div>
@@ -26,4 +35,3 @@
 
 
 {% endblock %}
-

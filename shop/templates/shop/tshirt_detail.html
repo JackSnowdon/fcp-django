@@ -1,6 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="row">
+    <div class="col-md-6">
+        <img class="detail-img card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ object.image }}')">
+    </div>
     <div class="col-md-6 text-center">
         <a href="{% url 'shirts' %}" class="btn btn-dark">Back To Shop</a>
         <h5 class="detail-title">{{ object.name }}</h5>
@@ -8,17 +11,14 @@
         <p class="card-text">{{ object.description }}</p>
         <hr class="break2">
         <p>£{{ object.price }}</p>
-        <form class="detail-button" method="post" action="{% url 'add_to_cart' object.id %}">
+        <form method="post" action="{% url 'add_to_cart' object.id %}">
             {% csrf_token %}
-            <div class="input-group">
+            <div class="input-group detail-button">
                 <span class="input-group-btn">
                     <button class="btn btn-success" type="submit">Add</button>
                 </span>
             </div>
         </form>
-    </div>
-    <div class="col-md-6">
-        <img class="detail-img card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ object.image }}')">
     </div>
 </div>
 

@@ -99,7 +99,7 @@
 }
 
 .col-card {
-    margin-bottom: 25px;
+    margin-bottom: 3.5em
 }
 
 
@@ -134,9 +134,8 @@
 }
 
 .detail-button {
-    display: inline-block;
+    display: block;
     margin: auto;
-    width: 10%;
 }
 
 /* Breaks And Spacing */
@@ -155,6 +154,10 @@
     background-color: #ffffff;
 }
 
+.padding-top {
+    padding-top: 0.5em
+}
+
 /* Class Helpers */
 
 a {
@@ -165,9 +168,6 @@ body {
     padding-top: 40px;
 }
 
-form {
-    width: 75%;
-}
 
 
 /* Media Queires */
