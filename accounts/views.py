@@ -8,10 +8,12 @@ from accounts.forms import UserLoginForm, UserRegistrationForm
 
 @login_required
 def logout(request):
-    """log the user out"""#
+    """log the user out"""
+    """
     cart = request.session.get('cart')
     print(cart)
     cart.save()
+    """
     auth.logout(request)
     messages.success(request, "You have been logged out!")
     return redirect(reverse('index'))
