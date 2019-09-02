@@ -17,6 +17,7 @@ def checkout(request):
     if request.method=="POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
+        print(order_form, payment_form);
         
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
@@ -40,7 +41,7 @@ def checkout(request):
                     amount = int(total * 100),
                     currency = "GBP",
                     description = request.user.email, 
-                    card = payment_form.cleaned_date['stripe_id'],
+                    card = payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
@@ -60,4 +61,4 @@ def checkout(request):
     
     return render(request, "checkout.html", {'order_form':order_form, 
                 'payment_form':payment_form, 
-                'publishable_key':settings.STRIPE_PUBLISHABLE})
+                'publishable':settings.STRIPE_PUBLISHABLE})
