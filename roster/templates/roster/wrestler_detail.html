@@ -1,13 +1,27 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
 
 <a href="{% url 'roster' %}" class="btn btn-dark back-button">Back To Roster</a>
-
-<p>{{ object.name }} </p>
-<p>{{ object.alignment }} </p>
-<p>{{ object.birthplace }} </p>
-<p><img class="img-fluid" src="{{ MEDIA_URL }}{{ object.image }}"> </p>
-<p>{{ object.description }} </p>
-<p>{{ object.titles.all|join:", " }}</p>
+<div class="row text-center">
+    <div class="col-12">
+        <h2>Name: {{ object.name }} </h2>
+        <h3>Hometown: {{ object.birthplace }} </h3>
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="img-fluid detail-img" src="{{ MEDIA_URL }}{{ object.image }}">
+            </div>
+            <div class="col-lg-8">
+                <p>{{ object.description }} </p>
+                {% if object.alignment.align == 'Schadenfreude' %}
+                <img src="{% static 'img/schan-black-min.jpeg' %}" alt="Schadenfreude Logo" class="img-fluid roster-header">
+                {% else %}
+                <img src="{% static 'img/new-logo-min.png' %}" alt="Fight Club Logo" class="img-fluid roster-header">
+                {% endif %}
+            </div>
+        </div>
+        <h3>Titles Won: </h3>
+        <h4>{{ object.titles.all|join:", " }}</h4>
+    </div>
+</div>
 
 
 

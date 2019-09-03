@@ -232,6 +232,12 @@
   right: 0;
 }
 
+/* Roster Detail */
+
+.detail-img{
+    height: 30rem;
+}
+
 
 /* Breaks And Spacing */
 
