@@ -8,8 +8,6 @@ def all_roster(request):
     roster = Wrestler.objects.all()
     fcp = roster.filter(alignment__align='FCP')
     schadenfreude = roster.filter(alignment__align='Schadenfreude')
-    print(roster)
-    print(schadenfreude)
     return render(request, "roster.html", {"fcp": fcp, "schadenfreude":schadenfreude})
     
 class SingleWrestler(DetailView):

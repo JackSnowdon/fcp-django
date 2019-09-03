@@ -1,19 +1,37 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}{% load staticfiles %} {% block content %}
 
+<div class="row text-center">
+    <div class="col-12">
+        <img src="{% static 'img/fcp-logo-min.png' %}" alt="Fight Club Logo" class="img-fluid roster-header">
+    </div>
+</div>
 {% for f in fcp %}
-<a href="{% url 'single_wrestler' f.id %}">
-<p>{{ f.name }} </p>
-<p><img class="img-fluid" src="{{ MEDIA_URL }}{{ f.image }}"> </p>
-</a>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="text-center">
+            <a class="roster-link hvr-underline-from-center" href="{% url 'single_wrestler' f.id %}">
+            <img class="img-fluid roster-header hvr-ripple-out" src="{{ MEDIA_URL }}{{ f.image }}">
+            <p>{{ f.name }} </p>
+        </a>
+        </div>
+    </div>
+</div>
 {% endfor %}
 
 
-{% for s in schadenfreude %}
-<a href="{% url 'single_wrestler' s.id %}">
-<p>{{ s.name }} </p>
-<p><img class="img-fluid" src="{{ MEDIA_URL }}{{ s.image }}"> </p>
-</a>
-{% endfor %}
-
-
-{% endblock %}
+<div class="row text-center">
+    <div class="col-12">
+        <img src="{% static 'img/schan-black-min.jpeg' %}" alt="Schadenfreude Logo" class="img-fluid roster-header"> {% for s in schadenfreude %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="text-center">
+            <a class="roster-link hvr-underline-from-center" href="{% url 'single_wrestler' s.id %}">
+            <img class="img-fluid roster-header" src="{{ MEDIA_URL }}{{ s.image }}">
+            <p>{{ s.name }} </p>
+        </a>
+        </div>
+    </div>
+</div>
+{% endfor %} {% endblock %}
