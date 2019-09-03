@@ -34,6 +34,14 @@
     color: #fafafa;
 }
 
+.user-log {
+    display: block;
+    color: #d9b637;
+    text-align: center;
+    padding: 14px 5px;
+    text-decoration: none;
+}
+
 .home-button {
     transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
@@ -57,7 +65,11 @@
 
 #footer {
     display: block;
-} 
+}
+
+.list-unstyled {
+    font-size: 1.5rem;
+}
 
 
 /* Background Colors */
@@ -177,6 +189,12 @@
 
 .padding-top {
     padding-top: 0.5em
+}
+
+/* Checkout Alert */
+
+.alert-message {
+    font-size: 1.5rem;
 }
 
 /* Class Helpers */
