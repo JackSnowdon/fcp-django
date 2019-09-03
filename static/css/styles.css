@@ -114,10 +114,14 @@
 /* Training */
 
 .training-box {
-    height: 350px;
+    height: 15rem;
     border-radius: 8px;
     border-top: 1px solid;
     border-bottom: 1px solid;
+}
+
+.training-heading {
+    font-size: 1.2rem;
 }
 
 /* Shop */
@@ -236,8 +240,21 @@ body {
     }
 }
 
+@media (max-width: 991.98px) {
+    .for-mobile {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 767.98px) {
     .back-button {
         display: block;
+    }
+}
+
+@media (max-width: 545px) {
+    .training-box {
+        height: 23rem;
     }
 }
