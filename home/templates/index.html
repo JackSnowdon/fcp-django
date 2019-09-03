@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block page_title %}Fight Club: Pro{% endblock %} {% block content %} {% for l in logo %}
+{% extends "base.html" %} {% load staticfiles %} {% block page_title %}Fight Club: Pro{% endblock %} {% block content %} {% for l in logo %}
 <div class="card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ l.image }}')">
 </div>
 {% endfor %}
@@ -11,13 +11,14 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-        {% for item in banner %} {% if item.title == "Returning For A Second Time" %}
+        {% for item in banner %} {% if item.title == "Project Mayhem" %}
         <div class="carousel-item active">
             <a class="banner-links" href="https://www.tickettailor.com/events/fightclubpro/">
                 <img class="carousel" style="background-image: url('{{ MEDIA_URL }}{{ item.image }}')">
                 <div class="text-center">
                     <h3>{{ item.title }}</h3>
-                    <p>{{ item.description}}</p>
+                    <p>{{ item.description }}</p>
+                            <hr class="break2">
                 </div>
             </div>
             </a> {% elif item.title == "Latest Release" %}
@@ -26,7 +27,8 @@
                 <img class="carousel" style="background-image: url('{{ MEDIA_URL }}{{ item.image }}')">
                 <div class="text-center">
                     <h3>{{ item.title }}</h3>
-                    <p>{{ item.description}}</p>
+                    <p>{{ item.description }}</p>
+                            <hr class="break2">
                 </div>
             </div>
             </a> {% else %}
@@ -34,7 +36,7 @@
                     <img class="carousel" style="background-image: url('{{ MEDIA_URL }}{{ item.image }}')">
                     <div class="text-center">
                         <h3>{{ item.title }}</h3>
-                        <p>{{ item.description}}</p>
+                        <hr class="break2">
                     </div>
                 </div>
                 {% endif %} {% endfor %}
@@ -47,6 +49,12 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
-<br><br><br><br><br><br>
-<hr class="break2"> {% endblock %}
+        </div>
+        <br><br><br><br><br><br>
+
+
+        <!--- <div>
+            <img src="{% static 'img/test.jpg' %}" alt="Smiley face">
+        </div> --->
+
+        {% endblock %}

@@ -111,6 +111,15 @@
     color: #d9b637;
 }
 
+/* Training */
+
+.training-box {
+    height: 350px;
+    border-radius: 8px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
 /* Shop */
 
 .card {

@@ -22,6 +22,7 @@ from shop import urls as urls_shop
 from cart import urls as urls_cart
 from search import urls as urls_search
 from checkout import urls as urls_checkout
+from training import urls as urls_training
 from django.views import static
 from .settings import MEDIA_ROOT
 
@@ -34,5 +35,6 @@ urlpatterns = [
     url(r'^cart/', include(urls_cart)),
     url(r'^search/', include(urls_search)),
     url(r'^checkout/', include(urls_checkout)),
+    url(r'^training/', include(urls_training)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]
