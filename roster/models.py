@@ -12,7 +12,7 @@ class Title(models.Model):
         
 class GoodOrBad(models.Model):
     FCP = 'FCP'
-    Schadenfreude = 'Schad'
+    Schadenfreude = 'Schadenfreude'
     
     alignment_choices = (
         (Schadenfreude, "Schadenfreude"),

@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+
+{% for f in fcp %}
+<p>{{ f.name }} </p>
+<p>{{ f.alignment }} </p>
+<p>{{ f.birthplace }} </p>
+<p><img class="img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ f.image }}')"> </p>
+<p>{{ f.description }} </p>
+<!-- <p>{{ f.titles }} </p> -->
+{{ f.titles.all|join:", " }}
+<p>{% endfor %} </p>
+
+
+{% for s in schadenfreude %}
+{{ s.name }}
+{{ s.alignment }}
+{% endfor %}
+
+
+{% endblock %}
+
+<!-- {% if r.alignment == "Fight Club: Pro" %}
+{{ r.name }}
+{% endif %} -->
