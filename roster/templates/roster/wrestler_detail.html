@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+
+
+<p>{{ object.name }} </p>
+<p>{{ object.alignment }} </p>
+<p>{{ object.birthplace }} </p>
+<p><img class="img-fluid" src="{{ MEDIA_URL }}{{ object.image }}"> </p>
+<p>{{ object.description }} </p>
+<p>{{ object.titles.all|join:", " }}</p>
+
+
+
+{% endblock %}

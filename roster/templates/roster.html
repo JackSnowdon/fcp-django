@@ -1,24 +1,19 @@
 {% extends 'base.html' %} {% block content %}
 
 {% for f in fcp %}
+<a href="{% url 'single_wrestler' f.id %}">
 <p>{{ f.name }} </p>
-<p>{{ f.alignment }} </p>
-<p>{{ f.birthplace }} </p>
-<p><img class="img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ f.image }}')"> </p>
-<p>{{ f.description }} </p>
-<!-- <p>{{ f.titles }} </p> -->
-{{ f.titles.all|join:", " }}
-<p>{% endfor %} </p>
+<p><img class="img-fluid" src="{{ MEDIA_URL }}{{ f.image }}"> </p>
+</a>
+{% endfor %}
 
 
 {% for s in schadenfreude %}
-{{ s.name }}
-{{ s.alignment }}
+<a href="{% url 'single_wrestler' s.id %}">
+<p>{{ s.name }} </p>
+<p><img class="img-fluid" src="{{ MEDIA_URL }}{{ s.image }}"> </p>
+</a>
 {% endfor %}
 
 
 {% endblock %}
-
-<!-- {% if r.alignment == "Fight Club: Pro" %}
-{{ r.name }}
-{% endif %} -->
