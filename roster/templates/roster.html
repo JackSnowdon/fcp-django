@@ -5,8 +5,8 @@
         <img src="{% static 'img/new-logo-min.png' %}" alt="Fight Club Logo" class="img-fluid roster-header">
     </div>
 </div>
-{% for f in fcp %}
 <div class="row">
+    {% for f in fcp %}
     <div class="col-lg-4">
         <div class="text-center">
             <a class="roster-link hvr-underline-from-center" href="{% url 'single_wrestler' f.id %}">
@@ -15,16 +15,16 @@
         </a>
         </div>
     </div>
+    {% endfor %}
 </div>
-{% endfor %}
-
 
 <div class="row text-center">
     <div class="col-12">
-        <img src="{% static 'img/schan-black-min.jpeg' %}" alt="Schadenfreude Logo" class="img-fluid roster-header"> {% for s in schadenfreude %}
+        <img src="{% static 'img/schan-black-min.jpeg' %}" alt="Schadenfreude Logo" class="img-fluid roster-header">
     </div>
 </div>
 <div class="row">
+    {% for s in schadenfreude %}
     <div class="col-lg-4">
         <div class="text-center">
             <a class="roster-link hvr-underline-from-center" href="{% url 'single_wrestler' s.id %}">
@@ -33,5 +33,5 @@
         </a>
         </div>
     </div>
-</div>
-{% endfor %} {% endblock %}
+    {% endfor %}
+</div>{% endblock %}
