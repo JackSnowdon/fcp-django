@@ -16,7 +16,7 @@
                 <p>£{{ shirt.price }}</p>
             </div>
             <div class="card-footer">
-                <a href="{% url 'item_detail' shirt.id %}" class="btn btn-light stretched-link">Details</a>
+                <a href="{% url 'item_detail' shirt.id %}" class="btn stretched-link">Click For Details</a>
             </div>
         </div>
         <form class="" method="post" action="{% url 'add_to_cart' shirt.id %}">
