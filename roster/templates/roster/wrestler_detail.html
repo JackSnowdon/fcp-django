@@ -19,7 +19,13 @@
             </div>
         </div>
         <h3>Titles Won: </h3>
-        <h4>{{ object.titles.all|join:", " }}</h4>
+        {% for title in object.titles.all %}
+           {% if title_name == 'None x 0' %}
+            <h4>None</h4>
+            {% else %} 
+            <h4>{{ title }}</h4>
+            {% endif %}
+        {% endfor %}
     </div>
 </div>
 
