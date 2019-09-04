@@ -128,6 +128,7 @@
 
 .card {
     color: #212529;
+    background-color: #a89c9c;
 }
 
 .card-img-top {
@@ -235,7 +236,7 @@
 /* Roster Detail */
 
 .detail-img{
-    height: 30rem;
+    height: 23rem;
 }
 
 

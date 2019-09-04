@@ -21,9 +21,9 @@
         <h3>Titles Won: </h3>
         {% for title in object.titles.all %}
            {% if title.title_name == 'None' %}
-            <h4>None</h4>
+            <h5>None</h5>
             {% else %} 
-            <h4>{{ title }}</h4>
+            <h5>{{ title }}</h5>
             {% endif %}
         {% endfor %}
     </div>
