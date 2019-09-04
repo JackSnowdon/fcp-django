@@ -20,7 +20,7 @@
         </div>
         <h3>Titles Won: </h3>
         {% for title in object.titles.all %}
-           {% if title_name == 'None x 0' %}
+           {% if title.title_name == 'None' %}
             <h4>None</h4>
             {% else %} 
             <h4>{{ title }}</h4>
