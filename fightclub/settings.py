@@ -33,11 +33,18 @@ if os.getenv('HOSTNAME') == 'fight-club-pro.herokuapp.com':
     ALLOWED_HOSTS = [os.getenv('HOSTNAME')]
     SECRET_KEY = os.environ.get('SECRET_KEY')
     DEBUG = False
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 else:
     import env
     ALLOWED_HOSTS = [env.HOSTNAME]
     SECRET_KEY = os.environ.get('SECRET_KEY')
     DEBUG = True
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # Application definition
 
@@ -91,15 +98,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'fightclub.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-
-
-DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
-    
 
 
 # Password validation

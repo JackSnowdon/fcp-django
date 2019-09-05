@@ -16,5 +16,5 @@ class WrestlerAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Title)
-admin.site.register(GoodOrBad)
+#admin.site.register(GoodOrBad)
 admin.site.register(Wrestler, WrestlerAdmin)

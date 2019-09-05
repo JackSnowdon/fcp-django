@@ -6,8 +6,8 @@ from .models import *
 
 def all_roster(request):
     roster = Wrestler.objects.order_by('name')
-    fcp = roster.filter(alignment__align='FCP')
-    schadenfreude = roster.filter(alignment__align='Schadenfreude')
+    fcp = roster.filter(alignment='FCP')
+    schadenfreude = roster.filter(alignment='Schadenfreude')
     return render(request, "roster.html", {"fcp": fcp, "schadenfreude":schadenfreude})
     
 class SingleWrestler(DetailView):
