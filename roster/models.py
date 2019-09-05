@@ -10,13 +10,15 @@ alignment_choices = (
     (FCP, 'Fight Club: Pro'),
 )
 
+
 class Title(models.Model):
     title_name = models.CharField(max_length=30)
     number_of_reigns = models.IntegerField()
 
     def __str__(self):
         return '{0} x {1}'.format(self.title_name, self.number_of_reigns)
-        
+
+
 
 class Wrestler(models.Model):
     name = models.CharField(max_length=100)
@@ -24,6 +26,8 @@ class Wrestler(models.Model):
     image = models.ImageField(upload_to='images')
     description = models.TextField()
     alignment = models.CharField(max_length=32, choices=alignment_choices, default=FCP)
+    twitter_handle = models.CharField(max_length=30, blank=True)
+    instagram_handle = models.CharField(max_length=30, blank=True)
     titles = models.ManyToManyField(Title)
     
     def __str__(self):

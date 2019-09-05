@@ -11,10 +11,10 @@ class WrestlerAdmin(admin.ModelAdmin):
         ("Image", {"fields": ["image"]}),
         ("Description", {"fields": ["description"]}),
         ("Alignment", {"fields": ["alignment"]}),
+        ("Social", {"fields": ["socials", "twitter_handle", "instagram_handle"]}),
         ("Titles", {"fields": ["titles"]})
     ]
 
 
 admin.site.register(Title)
-#admin.site.register(GoodOrBad)
 admin.site.register(Wrestler, WrestlerAdmin)

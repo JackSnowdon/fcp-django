@@ -5,6 +5,13 @@
     <div class="col-12">
         <h2>Name: {{ object.name }} </h2>
         <h3>Hometown: {{ object.birthplace }} </h3>
+        <ul class="details-social list-inline">
+            {% if object.twitter_handle %}
+            <li class="list-inline-item"><a class="btn-floating mx-1 detail-link " href="https://twitter.com/{{ object.twitter_handle }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            {% endif %} {% if object.instagram_handle %}
+            <li class="list-inline-item"><a class="btn-floating mx-1 detail-link " href="https://www.instagram.com/{{ object.instagram_handle }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            {% endif %}
+        </ul>
         <div class="row">
             <div class="col-lg-4">
                 <img class="img-fluid detail-img" src="{{ MEDIA_URL }}{{ object.image }}">
@@ -12,20 +19,17 @@
             <div class="col-lg-8">
                 <p>{{ object.description }} </p>
                 {% if object.alignment.align == 'Schadenfreude' %}
-                <img src="{% static 'img/schan-black-min.jpeg' %}" alt="Schadenfreude Logo" class="img-fluid roster-header">
-                {% else %}
-                <img src="{% static 'img/new-logo-min.png' %}" alt="Fight Club Logo" class="img-fluid roster-header">
-                {% endif %}
+                <img src="{% static 'img/schan-black-min.jpeg' %}" alt="Schadenfreude Logo" class="img-fluid roster-header"> {% else %}
+                <img src="{% static 'img/new-logo-min.png' %}" alt="Fight Club Logo" class="img-fluid roster-header"> {% endif %}
             </div>
         </div>
+
         <h3>Titles Won: </h3>
-        {% for title in object.titles.all %}
-           {% if title.title_name == 'None' %}
-            <h5>None</h5>
-            {% else %} 
-            <h5>{{ title }}</h5>
-            {% endif %}
-        {% endfor %}
+        {% for title in object.titles.all %} {% if title.title_name == 'None' %}
+        <h5>None</h5>
+        {% else %}
+        <h5>{{ title }}</h5>
+        {% endif %} {% endfor %}
     </div>
 </div>
 

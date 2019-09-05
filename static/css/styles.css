@@ -256,6 +256,21 @@
     height: 23rem;
 }
 
+.details-social {
+    font-size: 2rem;
+}
+
+.detail-link {
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.detail-link:hover {
+    color: #fafafa;
+}
+
 
 /* Breaks And Spacing */
 
