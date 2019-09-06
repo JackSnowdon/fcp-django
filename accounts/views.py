@@ -68,7 +68,20 @@ def registration(request):
 def user_profile(request):
     """ Display user profile """
     user = User.objects.get(email=request.user.email)
-    purhcases = Order.objects.filter(buyer=request.user.profile)
-    print(purhcases.OrderLineItem)
     
-    return render(request, 'profile.html', {"profile": user, "purhcases":purhcases})
+    orders = user.profile.orders.all()
+    for order in orders:
+        print(order)
+        id = order.id
+        print(id)
+        items = OrderLineItem.objects.filter(order=id)
+        print(items)
+    
+    
+  #  purhcases = Order.objects.filter(buyer=user.profile)
+    
+  #  order_items = OrderLineItem.objects.all()
+  #  print(purhcases) 
+  #  print(order_items)
+    
+    return render(request, 'profile.html', {"user": user})
