@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth.models import User
+from .models import *
+from checkout.models import *
 from accounts.forms import UserLoginForm, UserRegistrationForm
 
 # Create your views here.
@@ -66,4 +68,7 @@ def registration(request):
 def user_profile(request):
     """ Display user profile """
     user = User.objects.get(email=request.user.email)
-    return render(request, 'profile.html', {"profile": user})
+    purhcases = Order.objects.filter(buyer=request.user.profile)
+    print(purhcases.OrderLineItem)
+    
+    return render(request, 'profile.html', {"profile": user, "purhcases":purhcases})

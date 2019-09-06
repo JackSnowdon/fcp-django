@@ -15,4 +15,4 @@ class MakePaymentForm(forms.Form):
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        exclude = ['date', 'user']
+        exclude = ['date', 'buyer']
