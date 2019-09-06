@@ -11,7 +11,7 @@ class WrestlerAdmin(admin.ModelAdmin):
         ("Image", {"fields": ["image"]}),
         ("Description", {"fields": ["description"]}),
         ("Alignment", {"fields": ["alignment"]}),
-        ("Social", {"fields": ["socials", "twitter_handle", "instagram_handle"]}),
+        ("Social", {"fields": ["twitter_handle", "instagram_handle"]}),
         ("Titles", {"fields": ["titles"]})
     ]
 

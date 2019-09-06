@@ -13,7 +13,7 @@ class Profile(models.Model):
     favourite_wrestler = models.ForeignKey(Wrestler, on_delete=models.CASCADE, blank=True, null=True)
     
     def __str__(self):
-        return "{0}'s Profile".format(self.user)
+        return "{0}".format(self.user)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
