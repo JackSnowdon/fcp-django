@@ -9,9 +9,17 @@
 <p>{{ user.email }} </p>
 {{ user.profile }}
 
-{% for p in purhcases %}
-    {{ p }}
+{{ items }} 
+
+{% for order in orders %}
+    <a href="{% url 'single_order' order.id %}">
+        <p>{{ order.date }}{{ order.id }}</p></a>
+    {% for item in items %}
+    {{ item }}
+    {% endfor %}
 {% endfor %}
+
+{{ items }}
 
 {% endblock %}
 

@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth.models import User
+from django.views.generic import DetailView
 from .models import *
 from checkout.models import *
 from accounts.forms import UserLoginForm, UserRegistrationForm
@@ -70,18 +71,19 @@ def user_profile(request):
     user = User.objects.get(email=request.user.email)
     
     orders = user.profile.orders.all()
+    print(orders)
     for order in orders:
         print(order)
         id = order.id
         print(id)
         items = OrderLineItem.objects.filter(order=id)
         print(items)
+        for i in items:
+            print(i.product.name)
     
+    return render(request, 'profile.html', {"user": user, "orders": orders})
     
-  #  purhcases = Order.objects.filter(buyer=user.profile)
-    
-  #  order_items = OrderLineItem.objects.all()
-  #  print(purhcases) 
-  #  print(order_items)
-    
-    return render(request, 'profile.html', {"user": user})
+def single_order(request, pk):
+    print(pk)
+    order = Order.objects.filter(id=pk)
+    return render(request, 'single_order.html', {"order": order})

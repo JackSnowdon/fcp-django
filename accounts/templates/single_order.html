@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block page_title %}{{ user }}'s Profile{% endblock %}
+
+{% block page_heading %}{{ user }}'s Profile{% endblock %}
+
+{% block content %}
+
+<p>{{ user.email }} </p>
+{{ user.profile }}
+
+{{ order }} 
+{% for o in order %}
+{{ o.date }}
+{{ o.id }}
+{% endfor %}
+
+
+{% endblock %}
