@@ -11,7 +11,7 @@
 
 <h3>Your Orders:</h3>
 {% for order in orders %}
-    <a href="{% url 'single_order' order.id %}">
+    <a class="roster-link" href="{% url 'single_order' order.id %}">
         <h4>Order ID: {{ order.id }}</h4></a>
         <h4>Date Ordered: {{ order.date }}</h4>
         {% if order.shipped == True %}

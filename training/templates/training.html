@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% load staticfiles %}{% block page_title %}Training{% endblock %} {% block page_heading %}Wrestling Training{% endblock %} {% block content %}
+{% extends "base.html" %}{% load bootstrap_tags %}{% load staticfiles %}{% block page_title %}Training{% endblock %} {% block page_heading %}Wrestling Training{% endblock %} {% block content %}
 
 <div class="training-box text-center">
     <br>
@@ -65,6 +65,13 @@
                 We also have further staff on hand to help with getting to grips with the basics. Along with them you can expect to get words of advice and help from the other trainees.</p>
         </div>
     </div>
+</div>
+<div class="form-group text-center align-self-center offset-md-3 col-md-6">
+    <h2 class="training-header">Get In Touch</h2>
+    <p>Want to know more about training with Fight Club: PRO? Get in touch now and we will get back to you with more information.</p>
+    {{ contact_form|as_bootstrap }}
+    {% csrf_token %}
+    <input class="btn btn-success cart-add" id="submit_training_request" name="commit" type="submit" value="Sumbit Request">
 </div>
 
 

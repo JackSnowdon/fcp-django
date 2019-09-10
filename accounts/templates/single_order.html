@@ -10,7 +10,7 @@
         <h3>Ordered By: {{ o.full_name }}</h3>
         <h4>Delivery Address: {{ o.street_address1 }}</br>{{ o.street_address2 }}</br>{{ o.town_or_city }}</br>{{ o.postcode }}</br>{{ o.country }}</h4>
         {% if o.shipped == True %}
-        <h4>Order Shipped!</h4>
+        <h3>Order Shipped!</h3>
         {% endif %}
         {% endfor %}
     </div>
