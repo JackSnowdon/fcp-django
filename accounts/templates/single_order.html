@@ -1,19 +1,33 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block page_title %}{{ user }}'s Orders{% endblock %} {% block content %}
 
-{% block page_title %}{{ user }}'s Profile{% endblock %}
+<a href="{% url 'profile' %}" class="btn btn-dark back-button">Back To Profile</a>
 
-{% block page_heading %}{{ user }}'s Profile{% endblock %}
+<div class="row">
+    <div class="col-12 text-center">
+        {% for o in single_order %}
+        <h3>Order Number: {{ o.id }}</h3>
+        <h3>Ordered On: {{ o.date }}</h3>
+        <h3>Ordered By: {{ o.full_name }}</h3>
+        <h4>Delivery Address: {{ o.street_address1 }}</br>{{ o.street_address2 }}</br>{{ o.town_or_city }}</br>{{ o.postcode }}</br>{{ o.country }}</h4>
+        {% endfor %}
+    </div>
+</div>
 
-{% block content %}
-
-<p>{{ user.email }} </p>
-{{ user.profile }}
-
-{{ order }} 
-{% for o in order %}
-{{ o.date }}
-{{ o.id }}
-{% endfor %}
+<h3>Order Items:</h3>
+<div class="card-deck">
+    {% for item in items %}
+    <div class="col-card col-lg-4">
+        <div class="card card-list text-center">
+            <img class="detail-img card-img-top img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.product.name }}</h5>
+                <p class="card-text text-truncate">{{ item.product.description }}</p>
+                <p>£{{ item.product.price }} x {{ item.quantity }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 
 {% endblock %}

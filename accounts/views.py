@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth.models import User
@@ -84,6 +84,7 @@ def user_profile(request):
     return render(request, 'profile.html', {"user": user, "orders": orders})
     
 def single_order(request, pk):
-    print(pk)
-    order = Order.objects.filter(id=pk)
-    return render(request, 'single_order.html', {"order": order})
+    single_order = Order.objects.filter(id=pk)
+    items = OrderLineItem.objects.filter(order=pk)
+    
+    return render(request, 'single_order.html', {"single_order": single_order, "items": items})
