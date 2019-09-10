@@ -69,22 +69,15 @@ def registration(request):
 def user_profile(request):
     """ Display user profile """
     user = User.objects.get(email=request.user.email)
-    
     orders = user.profile.orders.all()
-    print(orders)
-    for order in orders:
-        print(order)
-        id = order.id
-        print(id)
-        items = OrderLineItem.objects.filter(order=id)
-        print(items)
-        for i in items:
-            print(i.product.name)
     
     return render(request, 'profile.html', {"user": user, "orders": orders})
     
 def single_order(request, pk):
     single_order = Order.objects.filter(id=pk)
     items = OrderLineItem.objects.filter(order=pk)
+    order_total = 0
+    for i in items:
+        order_total += (i.product.price * i.quantity)
     
-    return render(request, 'single_order.html', {"single_order": single_order, "items": items})
+    return render(request, 'single_order.html', {"single_order": single_order, "items": items, "order_total":order_total})
