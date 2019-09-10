@@ -65,14 +65,15 @@ def registration(request):
     return render(request, 'registration.html',
         {"registration_form": registration_form})
     
-    
+@login_required()    
 def user_profile(request):
     """ Display user profile """
     user = User.objects.get(email=request.user.email)
     orders = user.profile.orders.all()
     
     return render(request, 'profile.html', {"user": user, "orders": orders})
-    
+
+@login_required()    
 def single_order(request, pk):
     single_order = Order.objects.filter(id=pk)
     items = OrderLineItem.objects.filter(order=pk)

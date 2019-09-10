@@ -6,14 +6,18 @@
 
 {% block content %}
 
-<p>{{ user.email }} </p>
-{{ user.profile }}
+<h3>Username: {{ user.profile }}</h3>
+<p>Your Email: {{ user.email }} </p>
 
-{{ items }} 
-
+<h3>Your Orders:</h3>
 {% for order in orders %}
     <a href="{% url 'single_order' order.id %}">
-        <p>{{ order.date }}{{ order.id }}</p></a>
+        <h4>Order ID: {{ order.id }}</h4></a>
+        <h4>Date Ordered: {{ order.date }}</h4>
+        {% if order.shipped == True %}
+        <h4>Order Shipped!</h4>
+        {% endif %}
+        <br>
 {% endfor %}
 
 {{ items }}

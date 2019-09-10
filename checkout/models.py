@@ -15,6 +15,7 @@ class Order(models.Model):
     county = models.CharField(max_length=40, blank=True)
     date = models.DateField()
     buyer = models.ForeignKey(Profile, related_name='orders')
+    shipped = models.BooleanField(default=False)
     
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
