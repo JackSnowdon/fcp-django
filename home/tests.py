@@ -9,6 +9,7 @@ class HomePageTests(TestCase):
         response = self.client.get('/')
         self.assertEquals(response.status_code, 200)
         
+        
     def test_home_uses_correct_template(self):
         response = self.client.get('/')
         self.assertEquals(response.status_code, 200)

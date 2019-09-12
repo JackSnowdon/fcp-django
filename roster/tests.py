@@ -7,11 +7,13 @@ class WrestlerTests(TestCase):
     """
     Tests to test Wrestler Shop Model
     """
-    def test_wrestler_model(self):
+    def test_wrestler_as_string(self):
         name = Wrestler(name='Pete Dunne')
-        birthplace = Wrestler(birthplace='Birmingham, UK')
         self.assertEqual(str(name), 'Pete Dunne')
-        self.assertEqual(str(birthplace), 'Birmingham, UK')
+        
+    def test_title_as_a_string(self):
+        title = Title(title_name='test', number_of_reigns='1')
+        self.assertEqual(str(title), 'test x 1')
         
         
 class RosterPageTests(TestCase):
@@ -20,7 +22,11 @@ class RosterPageTests(TestCase):
     Tests to check page is rendering with the correct template
     """
 
-    def test_roster_page_status_code(self):
+    def test_roster_page_status_code_and_path(self):
+        response = self.client.get('/roster/')
+        self.assertEquals(response.status_code, 200)
+
+    def test_roster_page_url_name(self):
         response = self.client.get(reverse('roster'))
         self.assertEquals(response.status_code, 200)
        

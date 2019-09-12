@@ -17,8 +17,12 @@ class ShopPageTests(TestCase):
     """
     Tests to check page is rendering with the correct template
     """
+    
+    def test_shop_page_status_code_and_path(self):
+        response = self.client.get('/shop/')
+        self.assertEquals(response.status_code, 200)
 
-    def test_shop_page_status_code(self):
+    def test_shop_page_url_name(self):
         response = self.client.get(reverse('shirts'))
         self.assertEquals(response.status_code, 200)
        
