@@ -16,7 +16,7 @@
                         <div class="input-group-addon">Qty: </div>
                         <input name="quantity" type="number" min="0" max="999" class="form-control" value="{{item.quantity}}">
                         <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Adjust</button>
+                            <button class="btn btn-success cart-add" type="submit">Adjust</button>
                             </span>
                     </div>
                 </form>
@@ -30,7 +30,7 @@
         <h3> Total: <i class="fas fa-pound-sign"></i>{{ total }}</h3>
     </div>
     <div class="row">
-        <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><i class="fas fa-cash-register"></i>Checkout</a>
+        <a href="{% url 'checkout' %}" class="btn btn-success cart-add" role="button"><i class="fas fa-cash-register"></i>Checkout</a>
     </div>
 </div>
 {% endblock %}

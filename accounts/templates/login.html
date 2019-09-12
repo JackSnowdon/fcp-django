@@ -12,7 +12,7 @@
 
     <form class="form-helper" method="POST">
         {% csrf_token %} {{ login_form | as_bootstrap }}
-        <button type="submit" class="btn btn-success">Login</button>
+        <button type="submit" class="btn btn-success cart-add">Login</button>
     </form>
 
 <a class="roster-link"href="{% url 'password_reset' %}">Reset Password</a>
