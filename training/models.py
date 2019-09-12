@@ -11,5 +11,5 @@ class TrainingForm(models.Model):
     contacted = models.BooleanField(default=False)
     
     def __str__(self):
-        return "{0} Training infomation request, submitted on {1}".format(self.name, self.date)
+        return "{0} Training infomation request, submitted on {1}. Contacted = {2}".format(self.name, self.date, self.contacted)
         

@@ -10,7 +10,7 @@ def training(request):
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
             form = contact_form.save(commit=False)
-            order.date = timezone.now()
+            form.date = timezone.now()
             messages.error(request, "Infomation request sent, we will be in contact soon!")
             form.save()
             return redirect(reverse('index'))
