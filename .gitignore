@@ -6,3 +6,8 @@ media/
 .c9
 *__pycache__
 *.pyc
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover

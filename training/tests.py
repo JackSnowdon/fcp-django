@@ -3,7 +3,7 @@ from django.urls import reverse
 
 # Create your tests here.
 
-class TraingPageTests(TestCase):
+class TrainingPageTests(TestCase):
     
     """
     Tests to check page is rendering with the correct template
@@ -23,5 +23,3 @@ class TraingPageTests(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'training.html')
         
-#    def test_post_a_training_request(self):
- #       respo
