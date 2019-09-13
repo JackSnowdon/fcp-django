@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load bootstrap_tags %} {% block content %}
+{% extends 'base.html' %} {% block page_title %}Fight Club: Pro Cart{% endblock %}{% load bootstrap_tags %} {% block content %}
 <a href="{% url 'shirts' %}" class="btn btn-dark">Back To Shop</a>
 <div class="card-deck">
     {% for item in cart_items %}

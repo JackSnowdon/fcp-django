@@ -1,4 +1,4 @@
-{% extends 'base.html' %}{% load staticfiles %} {% block content %}
+{% extends 'base.html' %}{% load staticfiles %} {% block page_title %}Fight Club: Pro Roster{% endblock %} {% block content %}
 
 <div class="row text-center">
     <div class="col-12">
@@ -11,7 +11,7 @@
         <div class="text-center">
             <a class="roster-link hvr-underline-from-center" href="{% url 'single_wrestler' f.id %}">
             <img class="img-fluid" src="{{ MEDIA_URL }}{{ f.image }}">
-            <p>{{ f.name }} </p>
+            <h3>{{ f.name }} </h3>
         </a>
         </div>
     </div>
@@ -29,7 +29,7 @@
         <div class="text-center">
             <a class="roster-link hvr-underline-from-center" href="{% url 'single_wrestler' s.id %}">
             <img class="img-fluid" src="{{ MEDIA_URL }}{{ s.image }}">
-            <p>{{ s.name }} </p>
+            <h3>{{ s.name }} </h3>
         </a>
         </div>
     </div>

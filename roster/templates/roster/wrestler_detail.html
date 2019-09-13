@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load staticfiles %} {% block content %}
+{% extends 'base.html' %} {% load staticfiles %} {% block page_title %}{{ object.name }}'s Profile{% endblock %} {% block content %}
 
 <a href="{% url 'roster' %}" class="btn btn-dark back-button">Back To Roster</a>
 <div class="row text-center">

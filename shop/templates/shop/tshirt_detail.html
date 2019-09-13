@@ -1,4 +1,10 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+
+{% block page_title %}{{ object.name }}{% endblock %}
+
+{% block page_heading %}{{ object.name }}{% endblock %}
+
+{% block content %}
 
 <a href="{% url 'shirts' %}" class="btn btn-dark back-button">Back To Shop</a>
 <div class="row">
