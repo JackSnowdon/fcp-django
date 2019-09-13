@@ -32,7 +32,7 @@ if not, it imports env.py for the vars & settings
 if os.getenv('HOSTNAME') == 'fight-club-pro.herokuapp.com':
     ALLOWED_HOSTS = [os.getenv('HOSTNAME')]
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    DEBUG = True
+    DEBUG = False
     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 else:
     import env
@@ -45,6 +45,7 @@ else:
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 # Application definition
 
