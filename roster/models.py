@@ -2,6 +2,8 @@ from django.db import models
 
 # Create your models here.
 
+# Setting names for alignment choices 
+
 FCP = 'FCP'
 Schadenfreude = 'Schadenfreude'
     

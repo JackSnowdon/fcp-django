@@ -6,7 +6,6 @@ class TrainingForm(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     message = models.TextField()
-    phone_number = models.IntegerField()
     date = models.DateField()
     contacted = models.BooleanField(default=False)
     

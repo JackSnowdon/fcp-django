@@ -14,6 +14,9 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=40, blank=False)
     county = models.CharField(max_length=40, blank=True)
     date = models.DateField()
+    """
+    buyer links Order to a User's Profile for profile display purposes
+    """
     buyer = models.ForeignKey(Profile, related_name='orders')
     shipped = models.BooleanField(default=False)
     

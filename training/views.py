@@ -11,12 +11,14 @@ def training(request):
         if contact_form.is_valid():
             form = contact_form.save(commit=False)
             form.date = timezone.now()
+            form.phone_number = 100
             messages.error(request, "Infomation request sent, we will be in contact soon!")
             form.save()
             return redirect(reverse('index'))
         else: 
-            messages.error(request, "fail")
+            messages.error(request, "Message not sent, please try again!")
     else:
         contact_form = ContactForm()
-        return render(request, 'training.html', {'contact_form': contact_form})
+    
+    return render(request, 'training.html', {'contact_form': contact_form})
         

@@ -5,7 +5,7 @@ from .models import *
 # Create your tests here.
 class WrestlerTests(TestCase):
     """
-    Tests to test Wrestler Shop Model
+    Tests to test Wrestler & Title Models
     """
     def test_wrestler_as_string(self):
         name = Wrestler(name='Pete Dunne')

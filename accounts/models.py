@@ -8,6 +8,10 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from roster.models import Wrestler
 
+"""
+Upon User creation, Profile model is added and connected to a single user
+"""
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     favourite_wrestler = models.ForeignKey(Wrestler, on_delete=models.CASCADE, blank=True, null=True)
