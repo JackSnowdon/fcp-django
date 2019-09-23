@@ -67,8 +67,6 @@ For some reason uploading the png files through C9 became an issue, thus why the
 * [Training](Training.png)
 * [Profile](Profile.png)
 
-TO DO
-
 ## Features
 ### Existing Features
 
