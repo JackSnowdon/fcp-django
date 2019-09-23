@@ -12,10 +12,10 @@ I propose to build a site that helps bring everything together within FCP, free 
 
 Currently FCP Has 4 main web presences (off social media)
 
-Main Site: https://www.fightclubpro.co.uk/
-BigCartel (Shop/Merch): https://fightclubpro.bigcartel.com/
-Tickets: https://www.tickettailor.com/events/fightclubpro
-OnDemand: https://vimeo.com/fightclubpro
+* Main Site: https://www.fightclubpro.co.uk/
+* BigCartel (Shop/Merch): https://fightclubpro.bigcartel.com/
+* Tickets: https://www.tickettailor.com/events/fightclubpro
+* OnDemand: https://vimeo.com/fightclubpro
 
 Using the skills learnt I plan to integrate some of these services and providing a one stop show for all things FCP.
 I will build the shop into the main website, keeping users on one site thus improving the UX.
