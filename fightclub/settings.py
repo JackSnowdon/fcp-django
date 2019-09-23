@@ -35,7 +35,7 @@ if os.getenv('HOSTNAME') == 'fight-club-pro.herokuapp.com':
     DEBUG = True
     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 else:
-#    import env
+    import env
     ALLOWED_HOSTS = [env.HOSTNAME]
     SECRET_KEY = os.environ.get('SECRET_KEY')
     DEBUG = True
