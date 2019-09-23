@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.shortcuts import render, reverse
+from .views import *
 
 # Create your tests here.
 
@@ -22,3 +23,4 @@ class CartPageTests(TestCase):
         response = self.client.get(reverse('view_cart'))
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'cart.html')
+        
